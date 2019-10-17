@@ -1,12 +1,11 @@
----
 galaxy_info:
-  role_name: "zookeeper"
-  author: "Lean Delivery Team <team@lean-delivery.com>"
-  description: "ZooKeeper playbook for Ansible"
-  company: "EPAM Systems"
-  issue_tracker_url: "https://github.com/lean-delivery/ansible-role-zookeeper/issues"
-  license: "Apache"
-  min_ansible_version: "2.7"
+  author: seljuke
+  role_name: zookeeper
+  description: zookeeper-cluster deploy with ansible
+  license: Apache-2.0
+
+  min_ansible_version: 2.4
+
   platforms:
     - name: "Ubuntu"
       versions:
@@ -19,13 +18,6 @@ galaxy_info:
       versions:
         - "stretch"
 
-  galaxy_tags:
-    - "development"
-    - "system"
-    - "packaging"
-    - "system"
-    - "web"
-    - "solr"
-    - "zookeeper"
+  galaxy_tags: []
 
 dependencies: []

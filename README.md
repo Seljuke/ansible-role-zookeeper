@@ -1,11 +1,5 @@
 Zookeeper installation
 =========
-[![License](https://img.shields.io/badge/license-Apache-green.svg?style=flat)](https://raw.githubusercontent.com/lean-delivery/ansible-role-zookeeper/master/LICENSE)
-[![Build Status](https://travis-ci.org/lean-delivery/ansible-role-zookeeper.svg?branch=master)](https://travis-ci.org/lean-delivery/ansible-role-zookeeper)
-[![Build Status](https://gitlab.com/lean-delivery/ansible-role-zookeeper/badges/master/build.svg)](https://gitlab.com/lean-delivery/ansible-role-zookeeper/pipelines)
-[![Galaxy](https://img.shields.io/badge/galaxy-lean__delivery.zookeeper-blue.svg)](https://galaxy.ansible.com/lean_delivery/zookeeper)
-![Ansible](https://img.shields.io/ansible/role/d/36578.svg)
-![Ansible](https://img.shields.io/badge/dynamic/json.svg?label=min_ansible_version&url=https%3A%2F%2Fgalaxy.ansible.com%2Fapi%2Fv1%2Froles%2F36578%2F&query=$.min_ansible_version)
 
 This role:
   - Installs ZooKeeper
@@ -48,14 +42,6 @@ Role Variables
  - `zk_group` - OS user group name for zookeeper
 
     default: `zookeeper`
-
- - `zk_debian_apt_repositories` -  path to apt repository
-
-    default: `"deb http://us-east1.gce.archive.ubuntu.com/ubuntu/ bionic universe"`
-
- - `zk_redhat_yum_repositories` -  path to yum repository
-
-    default: `- https://archive.cloudera.com/cdh5/one-click-install/redhat/7/x86_64/cloudera-cdh-5-0.x86_64.rpm`
 
  - `zk_client_port` - zookeeper port
 
@@ -141,10 +127,10 @@ https://github.com/lean-delivery/ansible-role-java
 Example Inventory
 ----------------
 ```ini
- [zookeeper]
- zookeeper1 zk_server_role=participant
- zookeeper2 zk_server_role=observer
- zookeeper3
+ [zookeepers]
+   zk1 ansible_host=157.230.30.73 zookeepers_id=1 zk_server_role=participant
+   zk2 ansible_host=104.248.32.136 zookeepers_id=2
+   zk3 ansible_host=104.248.18.237 zk_server_role=observer
  ```
 
   - `zk_server_role` - zookeeper server role. Host variable. Variables: participant, observer
@@ -159,17 +145,10 @@ Example Playbook
   hosts: zookeeper
   roles:
     - role: lean_delivery.java
-    - role: lean_delivery.zookeeper
-      zk_inventory_group: zookeeper
+    - role: seljuke.zookeeper
+      zk_inventory_group: zookeepers
 ```
-
 
 License
 -------
 Apache
-
-Author Information
-------------------
-
-authors:
-  - Lean Delivery Team <team@lean-delivery.com>

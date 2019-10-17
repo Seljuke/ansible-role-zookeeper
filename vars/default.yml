@@ -1,5 +1,0 @@
----
-zk_packages:
-  - libselinux-python
-  - unzip
-  - zookeeper

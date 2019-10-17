@@ -1,6 +1,6 @@
 ---
 - name: Zookeeper Installation
-  include_tasks: '{{ zk_install_type }}.yml'
+  include_tasks: 'tarball_install.yml'
 
 - name: Enable zookeeper service
   service:
