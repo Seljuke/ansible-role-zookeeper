@@ -2,7 +2,7 @@
 - name: Set myid if isn't defined
   set_fact:
     zookeepers_id: '{{ zookeeper_hosts.index(inventory_hostname)|int + 1 }}'
-  when: zookeepers_id.stat.exists == False
+  when: zookeepers_id is not defined
 
 - name: Install and configure Zookeeper
   block:
@@ -30,7 +30,6 @@
   #   with_url: '{{ zk_url }}.{{ zk_checksum }}'
   #   loop_control:
   #     loop_var: sha_url_item
-  
       # checksum: '{{ zk_checksum }}:{{ sha_value.split(" ")[0] }}'
 
   - name: Check if tarball already exist
@@ -46,7 +45,7 @@
     until: result is succeeded
     retries: 10
     delay: 2
-    when: tarball_existence.stat.exists == False 
+    when: not tarball_existence
 
   - name: Creates directory
     file:
