@@ -1,7 +1,7 @@
 ---
 - name: Set myid if isn't defined
   set_fact:
-    zookeepers_id: '{{ zookeeper_hosts.index(inventory_hostname)|int + 1 }}'
+    zookeepers_id: '{{ zookeepers_hosts.index(inventory_hostname)|int + 1 }}'
   when: zookeepers_id is not defined
 
 - name: Install and configure Zookeeper

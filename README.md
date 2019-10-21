@@ -105,7 +105,7 @@ Role Variables
 
   - `zk_service_name` - zookeeper service name
 
-    default: `zookeeper`
+    default: `zookeepers`
 
   - `zk_service_start` - to start zookeeper service in the end of role/Playbook
 
@@ -144,7 +144,7 @@ Example Playbook
 - name: Installing ZooKeeper
   hosts: zookeeper
   roles:
-    - role: lean_delivery.java
+    - role: geerlingguy.java
     - role: seljuke.zookeeper
       zk_inventory_group: zookeepers
 ```
