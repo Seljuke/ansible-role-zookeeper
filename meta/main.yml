@@ -1,3 +1,6 @@
+---
+dependencies: []
+
 galaxy_info:
   author: seljuke
   role_name: zookeeper
@@ -17,7 +20,6 @@ galaxy_info:
     - name: "Debian"
       versions:
         - "stretch"
-
-  galaxy_tags: []
-
-dependencies: []
+  galaxy_tags:
+    - system
+    - zookeeper
