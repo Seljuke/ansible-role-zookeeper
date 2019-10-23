@@ -16,7 +16,7 @@ install:
 
 before_script:
   - cd ../
-  - mv ansible-role-$ROLE_NAME geerlingguy.$ROLE_NAME
+  - mv ansible-role-$ROLE_NAME seljuke.$ROLE_NAME
   - cd seljuke.$ROLE_NAME
 
 script:
