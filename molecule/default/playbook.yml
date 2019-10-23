@@ -7,5 +7,5 @@
     - include_tasks: java-8.yml
 
   roles:
-    - role: geerlingguy.java
-    - role: seljuke.zookeeper
+    - geerlingguy.java
+    - seljuke.zookeeper
