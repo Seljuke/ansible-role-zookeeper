@@ -18,6 +18,6 @@ galaxy_info:
       versions:
         - "stretch"
 
-  galaxy_tags: [geerlingguy.java]
+  galaxy_tags: []
 
 dependencies: []
